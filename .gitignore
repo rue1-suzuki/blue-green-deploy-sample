@@ -1,2 +1,4 @@
-.vecode/
+.venv/
+.vscode/
+__pycache__/
 https-portal-data/
