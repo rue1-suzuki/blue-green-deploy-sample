@@ -1,0 +1,17 @@
+version: '3.0'
+services:
+  web:
+    image: steveltn/https-portal:1.21
+    volumes:
+      - ./html/:/var/www/vhosts/localhost/
+      - ../https-portal-data/:/var/lib/https-portal/
+    ports:
+      - 80:80
+      - 443:443
+    deploy:
+      replicas: 3
+    environment:
+      TZ: Asia/Tokyo
+      STAGE: 'local'
+      DOMAINS: 'localhost'
+    restart: always
