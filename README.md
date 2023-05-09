@@ -1,4 +1,8 @@
-# docker-swarm
+# docker-swarmを利用したブルーグリーンデプロイ
+
+サンプルのためブルーグリーンの2世代のみ。
+
+3世代以上の世代管理も可能です。
 
 ## ./*/docker-compose.yml
 
@@ -34,3 +38,14 @@ bash switchStack.bash green
 ```
 
 *greenはディレクトリ名
+
+## https-portal
+
+証明書はホストマシンのディレクトリをマウントして利用する
+
+初回以降は新規発行不要
+
+```yaml
+volumes:
+    - ../https-portal-data/:/var/lib/https-portal/
+```
